@@ -52,4 +52,4 @@ jobs:
           app-name: 'NduProjectDotComAS'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C83618C6A01C419C9E024EDDD3BBB2D6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3827CF0DD97D4038836486258889D6CC }}
