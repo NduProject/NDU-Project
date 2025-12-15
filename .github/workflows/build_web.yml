@@ -31,7 +31,8 @@ jobs:
         run: |
           flutter --version
           # Build the Flutter web app. Pass through any build-time env defines your app expects.
-          flutter build web --release \
+          # --no-tree-shake-icons is required because icons are loaded dynamically from JSON data
+          flutter build web --release --no-tree-shake-icons \
             --dart-define=OPENAI_PROXY_API_KEY=${OPENAI_PROXY_API_KEY} \
             --dart-define=OPENAI_PROXY_ENDPOINT=${OPENAI_PROXY_ENDPOINT}
 
