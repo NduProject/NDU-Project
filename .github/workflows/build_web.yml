@@ -54,6 +54,9 @@ jobs:
     if: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -65,7 +68,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           # We deploy the prebuilt static output
-          app_location: build/web
-          api_location: ''
-          output_location: ''
+          app_location: "/" # App source code path
+          api_location: "" # API source code path - leave empty if no API
+          output_location: "build/web" # Built app files location
           skip_app_build: true
